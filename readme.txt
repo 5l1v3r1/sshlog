@@ -1,17 +1,28 @@
+* Summary
 
-sshlog is a one line patch to OpenSSH portable that logs user names and passwords.
-The patch is intended for cyber security research, honeypots, etc. 
+sshlog is a simple patch for OpenSSH portable that logs usernames, passwords
+and IPs all on one line for easy parsing. The patch is intended for cyber
+security research, honeypots, etc. 
 
-To apply the patch
+* To apply the patch
 
 Download OpenSSH Portable source code (http://www.openssh.com/portable.html).
-Then apply the patch and build OpenSSH per the normal process.
+Then copy the patch into the OpenSSH folder and apply it. Finally, build
+OpenSSH per the normal process.
 
-Example sshlog entries in /var/log/auth.log
+    patch --dry-run < sshlog.path
+    patch < sshlog.patch
+    ./configure
+    make
+    make install
 
-    sshlog: root hamlet
-    sshlog: root password123
-    sshlog: root king!!!
+* Example sshlog entries in /var/log/auth.log
 
-To avoid logging legitimate user passwords, use ssh keys.
+    sshlog: root hamlet 1.2.3.4
+    sshlog: root password123 5.6.7.8
+    sshlog: root king!!! 1:2:3:4:5:6:7:8
+
+* Notes
+
+    To avoid logging legitimate connections, use ssh keys.
 
