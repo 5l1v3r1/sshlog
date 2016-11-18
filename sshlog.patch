@@ -12,16 +12,17 @@ To apply:
     patch < sshlog.patch
 
 --- auth-passwd.c	2016-07-27 22:54:27.000000000 +0000
-+++ auth-passwd-w8rbt.c	2016-11-17 19:23:33.494055734 +0000
-@@ -85,6 +85,12 @@
++++ auth-passwd-w8rbt.c	2016-11-18 15:03:03.430646474 +0000
+@@ -85,6 +85,13 @@
  {
  	struct passwd * pw = authctxt->pw;
  	int result, ok = authctxt->valid;
 +
 +        struct ssh *ssh = active_state;
-+        logit("sshlog: %s %s %s", authctxt->user,
-+                                  password,
-+                                  ssh_remote_ipaddr(ssh));
++        logit("sshlog: %s %s %s %lu", authctxt->user,
++                                      password,
++                                      ssh_remote_ipaddr(ssh),
++                                      (unsigned long)time(NULL));
 +
  #if defined(USE_SHADOW) && defined(HAS_SHADOW_EXPIRE)
  	static int expire_checked = 0;
