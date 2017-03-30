@@ -6,7 +6,7 @@ security research, honeypots, etc.
 
 ## To apply the patch
 
-Download OpenSSH Portable source code (http://www.openssh.com/portable.html).
+Download the OpenSSH Portable source code (http://www.openssh.com/portable.html).
 Then copy the patch into the OpenSSH folder and apply it. Finally, build
 OpenSSH per the normal process.
 
