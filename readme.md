@@ -1,7 +1,7 @@
 # sshlog
 
-sshlog is a small patch for OpenSSH portable that logs user names, passwords
-and IPs all on one line for easy parsing. The patch is intended for cyber
+sshlog is a small patch for OpenSSH portable that logs user name, password,
+IP and epoch all on one line for easy parsing. The patch is intended for cyber
 security research, honeypots, etc. 
 
 ## To apply the patch
@@ -21,9 +21,9 @@ $ sudo make install
 ## Example sshlog entries in /var/log/auth.log
 
 ```bash
-sshlog: root hamlet 1.2.3.4
-sshlog: root password123 5.6.7.8
-sshlog: root king!!! 1:2:3:4:5:6:7:8
+Apr 12 08:49:55 x6 sshd[23775]: sshlog: root ~ritup2HD! 116.31.116.6 1492001395
+Apr 12 08:49:56 x6 sshd[23775]: sshlog: root [n0rd574r] 116.31.116.6 1492001396
+Apr 12 08:49:56 x6 sshd[23775]: sshlog: root zzzzzzzzzz 116.31.116.6 1492001396
 ```
 
 ## Notes
