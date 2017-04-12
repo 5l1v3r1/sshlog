@@ -11,7 +11,7 @@ Then copy the patch into the OpenSSH folder and apply it. Finally, build
 OpenSSH per the normal process.
 
 ```bash
-$ patch --dry-run < sshlog.path
+$ patch --dry-run < sshlog.patch
 $ patch < sshlog.patch
 $ ./configure
 $ make
