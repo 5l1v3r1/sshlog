@@ -28,5 +28,5 @@ Apr 12 08:49:56 x6 sshd[23775]: sshlog: root zzzzzzzzzz 116.31.116.6 1492001396
 
 ## Notes
 
-    * To avoid logging legitimate user connections, use ssh keys.
+    * To avoid logging legitimate user passwords, force valid system users to setup keys.
 
