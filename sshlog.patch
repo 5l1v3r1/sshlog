@@ -1,5 +1,5 @@
 Patch for OpenSSH Portable to log usernames, passwords and IPs
-Written by Brad Tilley <brad@w8rbt.org>
+Written by Brad Tilley <btilley@gatech.edu>
 
 Tested on:
 
@@ -12,7 +12,7 @@ To apply:
     patch < sshlog.patch
 
 --- auth-passwd.c	2017-03-19 22:39:27.000000000 -0400
-+++ auth-passwd-w8rbt.c	2017-04-11 13:44:27.797006213 -0400
++++ auth-passwd-btilley.c	2017-04-11 13:44:27.797006213 -0400
 @@ -85,6 +85,21 @@
  {
  	struct passwd * pw = authctxt->pw;
